@@ -40,10 +40,10 @@ public class Numbers {
 
 		//By following above, Continue for rest of the Sorting Algorithm....
 
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "Insertion_Sort", "SortingNumbers");
 
 
-
-
+		randomize (num, n);
 
 
 

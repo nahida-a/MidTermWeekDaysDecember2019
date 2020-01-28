@@ -1,8 +1,8 @@
 package problemandsolutions;
 
 public class RandomNumberGenerate {
-    //Write Java program to generate a random number between 1 to 8.
-
-
-
+    Random rand = new Random();
+    int max = 8;
+    int randomNum = rand.nextInt(max);
+    System.out.println("Random num between 1 to 8- "+(randomNum+1)));
 }

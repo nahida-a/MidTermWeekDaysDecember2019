@@ -21,7 +21,28 @@ public class GradeSheet {
 
 
     public static void main(String[] args) {
-
+        double quiz, midTerm, finalTerm,score;
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter score of the Quiz- ");
+        quiz=sc.nextDouble();
+        System.out.print("Enter score of the Mid Term- ");
+        midTerm=sc.nextDouble();
+        System.out.print("Enter score of the Final Term- ");
+        finalTerm=sc.nextDouble();
+        score=(quiz+midTerm+finalTerm)/3;
+        if(score>=90){
+            System.out.println("Grade is A");
+        }
+        else if(score>=70){
+            System.out.println("Grade is B");
+        }
+        else if(score>=50){
+            System.out.println("Grade is C");
+        }
+        else{
+            System.out.println("Grade is F");
+        }
     }
 
 }
+

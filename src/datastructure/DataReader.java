@@ -1,4 +1,6 @@
 package datastructure;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class DataReader {
 
@@ -19,6 +21,62 @@ public class DataReader {
 		 */
 
 		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+
+		File file = new File(textFile);
+		BufferedReader buffer = null;
+		String line = "";
+		String store = "";
+
+
+		try {
+
+			FileReader read = new FileReader(textFile);
+			buffer = new BufferedReader(read);
+
+
+
+			while ((line = buffer.readLine()) != null) {
+				store+=line;
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		Stack<String> wrdMap = new Stack<String>();
+		LinkedList<String> linkedList = new LinkedList<>();
+		String[] splitWords = textFile.split(" ");
+
+		for (String word : splitWords) {
+			Integer count = wrdMap.indexOf(splitWords);
+			if (count == null) {
+				count = 0;
+			}
+			wrdMap.add(word);
+		}
+		wrdMap.push(textFile);
+		System.out.println(wrdMap);
+
+		String[] storeArray = store.split(" ");
+		List<String> storeList = new LinkedList<String>();
+		Stack<String> storeStack = new Stack<String>();
+
+		for (String element: storeArray) {
+			storeList.add(element);
+			storeStack.push(element);
+		}
+		System.out.println("\n\nLinkedlist LIFO:");
+		Iterator<String> itr = storeList.iterator();
+		while (itr.hasNext()){
+			System.out.print(itr.next()+" ");
+		}
+		System.out.println("\n\nStack LIFO:");
+
+		while (!storeStack.isEmpty())
+		{
+			System.out.print(storeStack.pop() + " ");
+		}
+
 
 
 
